@@ -28,14 +28,14 @@ module.exports = {
         include : SRC_DIR,
         loader : 'babel-loader',      
         query: {
-          presets: ['react', 'es2015']
+          presets: ['react', 'es2016', 'stage-0']
        }
       }
     ]
   },
   plugins: [
     new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
+      'process.env.NODE_ENV': JSON.stringify('production', 'babel-plugin-transform-class-properties', 'transform-class-properties')
+    })    
   ]
 };
